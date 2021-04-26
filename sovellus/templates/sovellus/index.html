@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<title>Posts</title>
+
+<head>
+
+</head>
+
+<body>
+
+    <h1>Posts</h1>
+
+    <h3>List of posts</h3>
+
+    {% if post_list %}
+    <ul>
+        {% for post in post_list %}
+        <li><a href="{% url 'showPost' post.id %}">{{ post.header }}</a></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No posts are available.</p>
+    {% endif %}
+
+    <h3>Links:</h3>
+    <a href="{% url 'addNewPost' %}">Make a new post</a>
+</body>
+
+</html>

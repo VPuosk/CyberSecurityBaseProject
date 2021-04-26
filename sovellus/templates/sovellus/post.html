@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<title>Posts</title>
+
+<head>
+
+</head>
+
+<body>
+
+    <h1>{{ post.header }}</h1>
+
+    <h3>Posted:</h3>
+    <p>{{post.time}}</p>
+
+    <h3>Content:</h3>
+    <p>{{post.text}}</p>
+
+    <h4>Links:</h4>
+    <a href="{% url 'index' %}">List of posts</a>
+</body>
+
+</html>
