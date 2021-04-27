@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html>
-<title>Post something new</title>
+{% extends "base.html" %}
 
-<head>
+{% block title %}Post something new{% endblock %}
 
-</head>
+{% block content %}
+<h1>Add new posts</h1>
 
-<body>
+<form action="{% url 'postNewPost' %}" method="post">
+    {{ form }}
+    <input type="submit" value="Post">
+</form>
 
-    <h1>Add new posts</h1>
-
-    <form action="{% url 'postNewPost' %}" method="post">
-        {{ form }}
-        <input type="submit" value="Post">
-    </form>
-
-    <h4>Links:</h4>
-    <a href="{% url 'index' %}">List of posts</a>
-
-</body>
-
-</html>
+<h4>Links:</h4>
+<a href="{% url 'index' %}">List of posts</a>
+{% endblock %}
