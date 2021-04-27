@@ -3,6 +3,7 @@ from django.template import loader
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 
 from .models import Post
 from .forms import PostForm
@@ -10,7 +11,7 @@ from .forms import FilterForm
 
 import datetime
 
-# @login_required
+@login_required
 def index(request):
     listPosts = Post.objects.order_by('-time')
     # template = loader.get_template('sovellus/index.html')
@@ -74,6 +75,7 @@ def postNewPost(request):
         return HttpResponseRedirect('/')
     else:
         return HttpResponseRedirect('/')
+
 # from django.shortcuts import render
 
 # Create your views here.

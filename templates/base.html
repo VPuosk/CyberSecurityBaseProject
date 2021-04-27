@@ -9,6 +9,11 @@
     <div id="content">
         {% block content %}{% endblock %}
     </div>
+    <div>
+        <form action="{% url 'logout' %}" method="post">
+            <input type="submit" value="Logout">
+        </form>
+    </div>
 </body>
 
 </html>
