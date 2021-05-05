@@ -62,11 +62,11 @@ def showFilteredList(request):
         }
     else:
         form = FilterForm()
-        query = 'SELECT * FROM sovellus_post'
+        # query = 'SELECT * FROM sovellus_post'
         # logger.warning("WARNING: Filter for SQL-RAW: {0}".format(query.format(filterText)))
-        posts = Post.objects.raw(query)
+        # posts = Post.objects.raw(query)
         context = {
-            'post_list' : posts,
+            'post_list' : None,
             'form' : form,
         }
     return render(request, 'sovellus/filterview.html', context)
