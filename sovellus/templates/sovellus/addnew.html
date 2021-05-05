@@ -6,6 +6,7 @@
 <h1>Add new posts</h1>
 
 <form action="{% url 'postNewPost' %}" method="post">
+    {% csrf_token %}
     {{ form }}
     <input type="submit" value="Post">
 </form>
