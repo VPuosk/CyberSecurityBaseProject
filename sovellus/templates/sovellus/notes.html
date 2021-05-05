@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Very personal notes{% endblock %}
+
+{% block content %}
+<h3>List of notes:</h3>
+
+{% if note_list %}
+<ul>
+    {% for note in note_list %}
+    <li>
+        <div>
+            <div>{{ note.header }}</div><br>
+            <div>{{ note.time }}</div><br>
+            <div>{{ note.text }}</div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No personal notes.</p>
+{% endif %}
+
+<h3>Add new personal note:</h3>
+
+<form action="{% url 'postNewNote' poster %}" method="post">
+    {{ form }}
+    <input type="submit" value="Post">
+</form>
+
+<h4>Links:</h4>
+<a href="{% url 'index' %}">List of posts</a><br>
+<a href="{% url 'filterPost' %}">Filtered posts</a>
+{% endblock %}

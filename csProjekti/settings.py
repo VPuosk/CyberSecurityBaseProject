@@ -123,3 +123,26 @@ STATIC_URL = '/static/'
 
 
 LOGIN_REDIRECT_URL = 'index'
+
+LOGOUT_REDIRECT_URL = 'index'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+    'loggers': {
+        'sovellus': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}

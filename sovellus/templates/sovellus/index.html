@@ -19,6 +19,7 @@
 
 
 <h3>Links:</h3>
+<a href="{% url 'showNotes' user.get_username %}">Show personal notes</a><br>
 <a href="{% url 'addNewPost' %}">Make a new post</a><br>
 <a href="{% url 'filterPost' %}">Filtered posts</a>
 {% endblock %}

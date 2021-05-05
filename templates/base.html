@@ -6,6 +6,13 @@
 </head>
 
 <body>
+    <div>
+        {% if user.is_authenticated %}
+            <p>Logged in as: {{ user.get_username }}</p>
+        {% else %}
+            <p>Consider logging in</p>
+        {% endif %}
+    </div><br>
     <div id="content">
         {% block content %}{% endblock %}
     </div>
